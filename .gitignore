@@ -31,3 +31,4 @@ HELP.md
 
 ### zsh Gradle plugin ###
 .gradletasknamecache
+*.DS_Store
