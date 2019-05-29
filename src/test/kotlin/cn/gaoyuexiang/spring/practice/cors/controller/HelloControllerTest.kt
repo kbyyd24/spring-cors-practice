@@ -39,5 +39,6 @@ internal class HelloControllerTest(@Autowired val mockMvc: MockMvc) {
     internal fun shouldGetForbiddenWithNotAllowedOrigin() {
         this.mockMvc.perform(get(api).header(ORIGIN, "http://baidu.com"))
                 .andExpect(status().isForbidden)
+                .andExpect(content().string("Invalid CORS request"))
     }
 }
