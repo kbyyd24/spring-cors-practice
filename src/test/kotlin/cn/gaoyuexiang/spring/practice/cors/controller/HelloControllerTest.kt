@@ -6,7 +6,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.web.server.LocalServerPort
 import org.springframework.http.HttpHeaders.ORIGIN
-import org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.httpBasic
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.content
@@ -18,20 +17,16 @@ internal class HelloControllerTest(@Autowired val mockMvc: MockMvc, @LocalServer
 
     private val api = "/hello"
 
-    private val username = "cors-tester"
-
-    private val password = "tester"
-
     @Test
     internal fun shouldGetResponseSuccessWithoutOriginHeader() {
-        this.mockMvc.perform(get(api).with(httpBasic(username, password)))
+        this.mockMvc.perform(get(api))
                 .andExpect(status().isOk)
                 .andExpect(content().string("Hello, CORS!"))
     }
 
     @Test
     internal fun shouldGetResponseSuccessWithAllowedOrigin() {
-        this.mockMvc.perform(get(api).header(ORIGIN, "http://localhost:8080").with(httpBasic(username, password)))
+        this.mockMvc.perform(get(api).header(ORIGIN, "http://localhost:8080"))
                 .andExpect(status().isOk)
                 .andExpect(content().string("Hello, CORS!"))
     }
