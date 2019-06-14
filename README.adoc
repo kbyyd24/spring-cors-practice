@@ -7,18 +7,18 @@ Finished some practice about CORS in Spring:
 
 | `WebMvcConfigurer`
 | :negative_squared_cross_mark:
-| link:../mvc-interceptor[mvc-interceptor]
+| link:https://github.com/kbyyd24/spring-cors-practice/tree/mvc-interceptor[mvc-interceptor]
 
 | `WebMvcConfigurer`
 | :white_check_mark:
-| link:../mvc-interceptor-with-security[mvc-interceptor-with-security]
+| link:https://github.com/kbyyd24/spring-cors-practice/tree/mvc-interceptor-with-security[mvc-interceptor-with-security]
 
 | regist `CorsFilter`
 | :negative_squared_cross_mark:
-| link:../mvc-cors-filter[mvc-cors-filter]
+| link:https://github.com/kbyyd24/spring-cors-practice/tree/mvc-cors-filter[mvc-cors-filter]
 
 | regist `CorsFilter`
 | :white_check_mark:
-| link:../cors-filter-with-security[cors-filter-with-security]
+| link:https://github.com/kbyyd24/spring-cors-practice/tree/cors-filter-with-security[cors-filter-with-security]
 
 |===
